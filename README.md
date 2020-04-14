@@ -120,11 +120,10 @@ const answer = useSelector((state) => state.quiz.answers.find((a) => (
 
 ## How to get started 💪🏼
 
-1. Fork this repo
-2. Clone this repo into your projects folder on your computer
-3. Open up VS Code
-4. Install the dependencies needed for react by running `npm install`
-5. Run the react development server by running `npm start`
+1. Clone this repo into your projects folder on your computer
+2. Open up VS Code
+3. Install the dependencies needed for react by running `npm install`
+4. Run the react development server by running `npm start`
 
 ## Requirements 🧪
 
