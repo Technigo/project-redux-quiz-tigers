@@ -15,28 +15,33 @@ export const CurrentQuestion = () => {
   // const [value, setValue] = useState("")
 
   //handle submit function to dispatch
+  const handleAnswer = (id, index) => {
+    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
+  }
 
   const handleClick = event => {
     // event.preventDefault() 
     dispatch(quiz.actions.goToNextQuestion({}))
     //  call dispatch function and action
   }
-    if (!question) {
-      return <h1>Oh no! I could not find the current question!</h1>
-    }
-
-    return (
-      <div>
-        <h1>Question: {question.questionText}</h1>
-        {question.options.map(option => {
-          return (
-            <button>{option}</button>
-          )
-        })}
-        <button
-          onClick={handleClick}
-        >Next</button>
-      </div>
-    )
+  if (!question) {
+    return <h1>Oh no! I could not find the current question!</h1>
   }
+
+  return (
+    <div>
+      <h1>Question: {question.questionText}</h1>
+      {question.options.map((option, index) => {
+        return (
+          <button
+            onClick={() => handleAnswer(question.id, index)}
+          >{option}{index}</button>
+        )
+      })}
+      <button
+        onClick={handleClick}
+      >Next</button>
+    </div>
+  )
+}
 
