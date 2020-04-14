@@ -3,10 +3,11 @@ import { createSlice } from '@reduxjs/toolkit'
 // Change these to your own questions!
 const questions = [
   { id: 1, questionText: 'what organization did Hermione start in her 4th year?', options: [' Society for the Promotion of Elfish Welfare', "Dumbledore's army", ' wizards against the dark arts', 'witches for equal rights'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'What patronus does Luna Lovegood have?', options: [ 'Lion', 'Stag', ' Hare ', 'Horse'], correctAnswerIndex: 2 },
+  { id: 2, questionText: 'What patronus does Luna Lovegood have?', options: ['Lion', 'Stag', ' Hare ', 'Horse'], correctAnswerIndex: 2 },
   { id: 3, questionText: 'Ever the eccentric, Dumbledore has a scar above his left knee that is a perfect map of what? ', options: ['The Hogwarts Castle', 'Hogsmeade', 'Diagon Alley', 'The London Underground'], correctAnswerIndex: 3 },
   { id: 4, questionText: 'Who where Harrys parents?', options: [' William and Elizabeth Potter', 'Henry and Maggie Potter', 'James and Lily Potter'], correctAnswerIndex: 2 },
   { id: 5, questionText: 'What animal can Professor McGonagall transform her Animagi into?', options: ['A phoenix', 'A cat', 'A black dog', 'An owl'], correctAnswerIndex: 1 }
+  { id: 6, questionText: 'What animal can Professor McGonagall transform her Animagi into?', options: ['A phoenix', 'A cat', 'A black dog', 'An owl'], correctAnswerIndex: 1 }
 ]
 
 const initialState = {
