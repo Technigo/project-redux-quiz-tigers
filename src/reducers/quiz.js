@@ -12,7 +12,7 @@ const questions = [
 const initialState = {
   questions,
   answers: [],
-  currentQuesionIndex: 0,
+  currentQuestionIndex: 0,
   quizOver: false
 }
 
@@ -65,10 +65,10 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     goToNextQuestion: (state) => {
-      if (state.currentQuesionIndex + 1 === state.questions.length) {
+      if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true
       } else {
-        state.currentQuesionIndex += 1
+        state.currentQuestionIndex += 1
       }
     },
 
