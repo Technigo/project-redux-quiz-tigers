@@ -18,9 +18,9 @@ export const CurrentQuestion = () => {
 
   const handleClick = event => {
     // event.preventDefault() 
-    dispatch(quiz.actions.addGoToNextQuestion({}))
+    dispatch(quiz.actions.goToNextQuestion({}))
     //  call dispatch function and action
-
+  }
     if (!question) {
       return <h1>Oh no! I could not find the current question!</h1>
     }
@@ -34,10 +34,9 @@ export const CurrentQuestion = () => {
           )
         })}
         <button
-          onClick={handleClick()}
+          onClick={handleClick}
         >Next</button>
       </div>
     )
   }
 
-}
