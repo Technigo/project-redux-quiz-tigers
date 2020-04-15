@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "../reducers/quiz";
+import { Summary } from 'components/Summary'
 
 //Recives ??? as imput
 export const CurrentQuestion = () => {
@@ -11,8 +12,9 @@ export const CurrentQuestion = () => {
   const answer = useSelector((state) =>
     state.quiz.answers.find((a) => a.questionId === question.id)
   );
-  console.log(answer); // question could come from the previous selector in the last example
 
+
+  console.log(answer); // question could come from the previous selector in the last example
   // add dispatch
   // a way to message the store
   // sends actions to the store
@@ -21,10 +23,10 @@ export const CurrentQuestion = () => {
   // create state for input from form
   // const [value, setValue] = useState("")
 
-  //handle submit function to dispatch
+  // handle submit function to dispatch
   const handleAnswer = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-    console.log(question);
+    //console.log(question);
   };
 
   const handleClick = (event) => {
@@ -43,7 +45,7 @@ export const CurrentQuestion = () => {
       {question.options.map((option, index) => {
         return (
           <button
-            // className={`${answer.isCorrect ? "correct" : ""}`}
+            className={`an-existing-class ${answer && answer.isCorrect ? 'green' : 'red'}`}
             onClick={() => handleAnswer(question.id, index)}
           >
             {option}
@@ -51,6 +53,7 @@ export const CurrentQuestion = () => {
         );
       })}
       <button onClick={handleClick}>Next</button>
+      <p>{question.id}/5</p>
     </div>
   );
 };
