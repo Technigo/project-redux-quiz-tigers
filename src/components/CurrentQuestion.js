@@ -5,6 +5,7 @@ import { Summary } from 'components/Summary'
 
 //Recives ??? as imput
 export const CurrentQuestion = () => {
+
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
@@ -26,6 +27,7 @@ export const CurrentQuestion = () => {
   // handle submit function to dispatch
   const handleAnswer = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
+    // {if isCorrect === true setUserAnswer +1}
     //console.log(question);
   };
 
