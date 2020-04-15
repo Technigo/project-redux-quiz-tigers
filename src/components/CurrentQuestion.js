@@ -47,11 +47,17 @@ export const CurrentQuestion = () => {
       {question.options.map((option, index) => {
         return (
           <button
-            className={`an-existing-class ${answer && answer.isCorrect ? 'green' : 'red'}`}
+            className={`${index === question.correctAnswerIndex ? (answer ? 'green' : '') : ''} ${answer && !answer.isCorrect ? (answer.answerIndex === index ? "red" : "") : ""}`}
             onClick={() => handleAnswer(question.id, index)}
+            disabled={answer ? true : false}
           >
             {option}
+            {/* {index}{question.correctAnswerIndex}
+            {index === question.correctAnswerIndex ? " rätt" : " fel"}
+            {answer ? " svarat" : " inte svarat"}
+            {answer ? (answer.answerIndex === index ? " MITT SVAR" : "") : ""} */}
           </button>
+
         );
       })}
       <button onClick={handleClick}>Next</button>
