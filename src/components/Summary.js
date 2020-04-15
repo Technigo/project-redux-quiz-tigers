@@ -1,12 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "../reducers/quiz";
+import { Image } from './Image'
+import "./summary.css"
 
 export const Summary = () => {
   const dispatch = useDispatch();
   const quizOver = useSelector((state) =>
     state.quiz.quizOver
   );
+
   const numCorrect = useSelector((state) =>
     state.quiz.answers.filter((a) => a.isCorrect === true).length
   );
@@ -21,31 +24,18 @@ export const Summary = () => {
     }
     else {
       return (
-        <>
-          <h2>Quizover</h2>
-          <p>You got {numCorrect} correct answers</p>
-          {numCorrect < 2 ? (<p>Dåligt...</p>) : (<> </>)}
-          {numCorrect >= 2 && numCorrect < 5 ? (<p>Ganska bra...</p>) : (<> </>)}
-          {numCorrect === 5 ? (<p>Potterhead</p>) : (<> </>)}
-          <button onClick={restart}>Restart</button>
-        </>
+        <section className="summary">
+          <Image />
+          <div className="summary-container">
+            <h1>Summary</h1>
+            <p>Your score is {numCorrect}/5!</p>
+            {numCorrect < 2 ? (<p>Maybe you should watch the movies to refresh your knowledge?</p>) : (<> </>)}
+            {numCorrect >= 2 && numCorrect < 5 ? (<p>On your way to Hogwarts!</p>) : (<> </>)}
+            {numCorrect === 5 ? (<p>You are a true Potterhead!</p>) : (<> </>)}
+          </div>
+          <button onClick={restart}>Try again</button>
+        </section>
       )
     }
   }
 }
-
-
-
-
-
-// <p>
-// <details><summary>Show restart example</summary>
-// <p>
-
-// ```
-// dispatch(quiz.actions.restart())
-// ```
-
-// </p>
-// </details>
-// </p>

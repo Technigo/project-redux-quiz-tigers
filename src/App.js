@@ -4,6 +4,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion'
 import { Summary } from 'components/Summary'
+import 'app.css'
+
 
 //Creates store, tells redux about reducers
 const reducer = combineReducers({
@@ -19,8 +21,10 @@ export const App = () => {
 
   return (
     <Provider store={store}> {/* Gives access to the store*/}
-      <CurrentQuestion />
-      <Summary />
+      <section>
+        <CurrentQuestion />
+        <Summary />
+      </section>
     </Provider>
   )
 }

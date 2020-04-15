@@ -4,12 +4,12 @@ import { createSlice } from '@reduxjs/toolkit';
 const questions = [
   {
     id: 1,
-    questionText: 'what organization did Hermione start in her 4th year?',
+    questionText: 'What organization did Hermione start in her 4th year?',
     options: [
-      ' Society for the Promotion of Elfish Welfare',
+      'Society for the Promotion of Elfish Welfare',
       "Dumbledore's army",
-      ' wizards against the dark arts',
-      'witches for equal rights'
+      'Wizards against the dark arts',
+      'Witches for equal rights'
     ],
     correctAnswerIndex: 0
   },
@@ -35,7 +35,7 @@ const questions = [
     id: 4,
     questionText: 'Who where Harrys parents?',
     options: [
-      ' William and Elizabeth Potter',
+      'William and Elizabeth Potter',
       'Henry and Maggie Potter',
       'James and Lily Potter'
     ],
