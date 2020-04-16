@@ -44,8 +44,6 @@ button:disabled {
   opacity: 0.6;
 }
 
-.question-button {}
-
 .correct-answer:disabled {
   background: green;
 }
@@ -58,5 +56,3 @@ button:disabled {
 .next-button {
   margin-top: 60px;
 }
-
-.completed {}

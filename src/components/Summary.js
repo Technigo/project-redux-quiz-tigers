@@ -1,28 +1,26 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "../reducers/quiz";
+/* eslint-disable react/button-has-type */
+/* eslint-disable max-len */
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { quiz } from '../reducers/quiz';
 import { Image } from './Image'
-import "./summary.css"
+import './summary.css'
 
 export const Summary = () => {
   const dispatch = useDispatch();
-  const quizOver = useSelector((state) =>
-    state.quiz.quizOver
-  );
+  const quizOver = useSelector((state) => state.quiz.quizOver);
 
-  const numCorrect = useSelector((state) =>
-    state.quiz.answers.filter((a) => a.isCorrect === true).length
-  );
+  const numCorrect = useSelector((state) => state.quiz.answers.filter((a) => a.isCorrect === true).length);
 
   const restart = () => {
     dispatch(quiz.actions.restart())
   };
 
+  // eslint-disable-next-line no-lone-blocks
   {
     if (quizOver === false) {
       return (<></>)
-    }
-    else {
+    } else {
       return (
         <section className="summary">
           <Image />
